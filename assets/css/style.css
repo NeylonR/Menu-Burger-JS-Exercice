@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/roboto/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: robotoBold;
+  src: url(../fonts/roboto/Roboto-Bold.ttf);
+}
+body {
+  font-family: roboto;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 50vh;
+}
+nav #navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+nav #navbar li {
+  padding: 2em;
+}
+@keyframes linkAnim {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+nav #navbarOfBurger {
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+}
+nav #navbarOfBurger li {
+  background-color: rgba(128, 128, 128, 0.1);
+  padding: 0.75em;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.1s ease-in-out;
+}
+nav #navbarOfBurger li a {
+  font-family: robotoBold;
+  color: grey;
+  display: block;
+}
+nav #navbarOfBurger li:hover {
+  background-color: rgba(119, 119, 119, 0.5);
+}
+nav #navbarOfBurger li:hover a {
+  color: white;
+}
+nav #navbarOfBurger.open a {
+  animation: linkAnim 1.3s;
+}
+nav #navbarOfBurger.open.sticky {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+}
+nav #navbarOfBurger.open.sticky li {
+  background-color: rgba(109, 109, 109, 0.9);
+  padding: 1em 2em;
+  transition: all 0.3s ease-in-out;
+}
+nav #navbarOfBurger.open.sticky li a {
+  color: black;
+  font-family: robotoBold;
+  transition: all 0.3s ease-in-out;
+}
+nav #navbarOfBurger.open.sticky li:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+nav #navbarOfBurger.open.sticky li:hover a {
+  color: white;
+}
+nav #navbarOfBurger {
+  transform: scaleY(0) translateY(100%);
+  max-height: 0;
+}
+nav #navbarOfBurger.open {
+  transform: scaleY(1) translateY(100%);
+}
+nav #burgerButton {
+  position: relative;
+  cursor: pointer;
+  height: 2.5em;
+  margin-bottom: 1em;
+}
+nav #burger::after, nav #burger::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+}
+nav #burger {
+  position: relative;
+  display: inline-block;
+  top: 20%;
+  transition: all 0.5s ease-in-out;
+}
+nav #burger.open {
+  background: rgba(167, 1, 9, 0.8);
+  height: 2.5em;
+  top: 0;
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px black;
+}
+nav #burger.open::after, nav #burger.open::before {
+  top: 1.05em;
+  left: 0.25em;
+  background-color: black;
+  box-shadow: 0px 0px 2px black;
+  width: 2em;
+}
+nav #burger.open::after {
+  transform: rotate(-45deg);
+}
+nav #burger.open::before {
+  transform: rotate(45deg);
+}
+nav #burger, nav #burger::after, nav #burger::before {
+  width: 2.5em;
+  height: 0.4em;
+  background-color: black;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+nav #burger::after {
+  top: -10px;
+  left: 0;
+}
+nav #burger::before {
+  top: 10px;
+  left: 0;
+}
+
+article {
+  margin-bottom: 5em;
+  padding: 3em;
+}
+
+/*# sourceMappingURL=style.css.map */
